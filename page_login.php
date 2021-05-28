@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require "register.php";
 ?>
 
 <!DOCTYPE html>
@@ -38,12 +38,10 @@ session_start();
             </a>
         </div>
         <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
-                <?php if(isset($_SESSION["success"])):?>
-                    <div class="alert alert-success text-dark" role="alert">
-                        <?php echo $_SESSION["success"];?>
-                    </div>                                    
-                <?php endif;?>
-            <form action="">
+               
+        <?php display_flash_message("success");?>  
+            
+            <form action="register.php" method="post">
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
                     <input type="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
