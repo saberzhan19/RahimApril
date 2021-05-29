@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "register.php";
+include "register.php";
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ require "register.php";
                
         <?php display_flash_message("success");?>  
             
-            <form action="register.php" method="post">
+            <form action="register.php" method="POST" >
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
                     <input type="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
